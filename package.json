@@ -20,7 +20,8 @@
     "dbstudio": "npx prisma studio --experimental",
     "dbdev": "ts-node ./prisma/dbscript.ts",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "postinstall": "npm run dbupdate"
   },
   "dependencies": {
     "@prisma/cli": "^2.0.0-beta.3",
