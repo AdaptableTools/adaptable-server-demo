@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id Int @id
+}
+
+model Order {
+  OrderId           Int       @default(autoincrement()) @id
+  CustomerReference String?
+  CompanyName       String?
+  ContactName       String?
+  Employee          String?
+  InvoicedCost      Float?
+  ItemCount         Int?
+  ChangeLastOrder   Int?
+  ItemCost          Float?
+  OrderCost         Float?
+  PackageCost       Float?
+  OrderDate         DateTime?
+  RequiredDate      DateTime?
+  ShippedDate       DateTime?
+  ShipVia           String?
+  Freight           Float?
+  ShipName          String?
+  ShipAddress       String?
+  ShipCity          String?
+  ShipRegion        String?
+  ShipPostalCode    String?
+  ShipCountry       String?
+  IsValid           Boolean?
+  LastUpdatedTime   DateTime?
+}

@@ -15,18 +15,24 @@
   },
   "homepage": "https://github.com/AdaptableTools/adaptable-poc#readme",
   "scripts": {
-    "dev": "next -- -p 3001",
+    "dev": "npm run dbupdate && next -- -p 3001",
+    "dbupdate": "npx prisma generate",
+    "dbstudio": "npx prisma studio --experimental",
+    "dbdev": "ts-node ./prisma/dbscript.ts",
     "start": "next start",
     "build": "next build && next export"
   },
   "dependencies": {
+    "@adaptabletools/adaptable": "^6.2.0",
     "@adaptabletools/adaptable-plugin-charts": "^6.2.0",
     "@adaptabletools/adaptable-plugin-finance": "^6.2.0",
     "@adaptabletools/adaptable-plugin-nocode-aggrid": "^6.2.0",
-    "@adaptabletools/adaptable": "^6.2.0",
     "@adaptabletools/adaptable-react-aggrid": "^6.2.0",
     "@ag-grid-community/react": "^22.1.2",
     "@ag-grid-enterprise/all-modules": "^22.1.2",
+    "@prisma/cli": "^2.0.0-beta.3",
+    "@prisma/client": "^2.0.0-beta.3",
+    "cors": "^2.8.5",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -38,6 +44,10 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "prettier": "^1.19.1",
+    "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
